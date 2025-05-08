@@ -1,0 +1,14 @@
+# 配置文件目录
+BIRD_CONF_DIR=/etc/bird
+
+# 日志文件目录
+BIRD_LOG_DIR=/var/log/bird
+
+# 服务运行用户
+BIRD_RUN_USER=bird
+
+# 服务运行用户组
+BIRD_RUN_GROUP=bird
+
+# 服务运行参数附加项
+BIRD_ARGS=
