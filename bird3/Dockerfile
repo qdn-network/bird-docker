@@ -43,7 +43,7 @@ RUN tar -xvzf bird-${BIRDV}.tar.gz
 
 # make
 WORKDIR /tmp/bird-${BIRDV}
-RUN ./configure --prefix=/usr --sysconfdir=/etc/bird --localstatedir=/var --enable-debug --with-runtimedir=/run/bird
+RUN ./configure --prefix=/usr --sysconfdir=/etc/bird --localstatedir=/var --enable-debug --enable-libssh --enable-mpls-kernel --with-runtimedir=/run/bird
 RUN make
 
 
@@ -58,7 +58,6 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
 COPY bird.conf /usr/share/bird3
-COPY envvars /usr/share/bird3
 
 EXPOSE 179
 
